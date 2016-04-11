@@ -1,4 +1,4 @@
-package svalidate.common
+package svalidate.validators
 
 import svalidate.Validator
 

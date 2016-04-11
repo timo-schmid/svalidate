@@ -2,7 +2,7 @@ package svalidate
 
 import org.specs2.mutable.Specification
 
-import svalidate.common.{PositiveInt, NonEmptyString, MinLengthString, EqualPasswords}
+import svalidate.validators.{PositiveInt, NonEmptyString, MinLengthString, EqualPasswords}
 
 case class TestData(i: Int, s: String)
 

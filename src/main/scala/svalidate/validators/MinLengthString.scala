@@ -1,4 +1,4 @@
-package svalidate.common
+package svalidate.validators
 
 import svalidate.Validator
 
@@ -7,7 +7,7 @@ class MinLengthString(minLength: Int) extends Validator[String] {
   def validate(s: String): Seq[String] =
     if(s.length < minLength)
       Seq(
-        s"The %s must be at least $minLength characters long"
+        s"The field %s must be at least $minLength characters long"
       )
     else
       Seq.empty
