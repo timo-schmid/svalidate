@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
       "org.specs2"        %%  "specs2-mock"       % "3.7"    % "test"
     ),
     publishMavenStyle := false,
-    bintrayRepository := "sbt-plugins",
+    bintrayRepository := "maven",
     bintrayOrganization := None,
     licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0"))
   )

@@ -23,11 +23,14 @@ To add svalidate to your build, add it to your project's libraryDependencies:
 
 ```
 libraryDependencies ++= Seq(
-  "svalidate" %% "svalidate" % "0.1-SNAPSHOT"
+  "svalidate" %% "svalidate" % "$VERSION"
 )
+resolvers += Resolver.bintrayRepo("timo-schmid", "maven")
 ```
 
-> Not published yet - the group name might change.
+>
+> Replace $VERSION with the current version.
+>
 
 ## Running the examples in a REPL
 
