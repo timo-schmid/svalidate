@@ -2,7 +2,7 @@ package svalidate
 
 import org.specs2.mutable.Specification
 
-import svalidate.validators.{PositiveInt, NonEmptyString, MinLengthString, EqualPasswords}
+import svalidate.validators.{PositiveInt, NonEmptyString, MinLengthString, EqualStrings}
 
 case class TestData(i: Int, s: String)
 
@@ -18,7 +18,7 @@ object ValidationSpec extends Specification {
       ) must equalTo("i", Seq.empty)
       validateSingle(demoDataWithError)(
         Validation[TestData, Int]("i", _.i, PositiveInt)
-      ) must equalTo(("i", Seq("The %s must be a positive integer")))
+      ) must equalTo(("i", Seq("The field %s must be a positive integer")))
     }
 
     "be able to validate a single string property of a case class" in {
@@ -29,7 +29,7 @@ object ValidationSpec extends Specification {
       ) must equalTo("s", Seq.empty)
       validateSingle(demoDataWithError)(
         Validation[TestData, String]("s", _.s, NonEmptyString)
-      ) must equalTo(("s", Seq("The %s must not be empty")))
+      ) must equalTo(("s", Seq("The field %s must not be empty")))
     }
 
     "be able to validate a case class with multiple validators" in {
@@ -40,7 +40,7 @@ object ValidationSpec extends Specification {
         Validation("s", _.s, NonEmptyString)
       )
       myValidator(demoDataValid) must equalTo(Map.empty)
-      myValidator(demoDataWithErrors) must equalTo(Map("i" -> Seq("The %s must be a positive integer"), "s" -> Seq("The %s must not be empty")))
+      myValidator(demoDataWithErrors) must equalTo(Map("i" -> Seq("The field %s must be a positive integer"), "s" -> Seq("The field %s must not be empty")))
     }
 
     "be able to validate a single property with multiple validators" in {
@@ -52,7 +52,7 @@ object ValidationSpec extends Specification {
         Validation("s", _.s, MinLengthString(3))
       )
       myValidator(demoDataValid) must equalTo(Map.empty)
-      myValidator(demoDataWithErrors) must equalTo(Map("i" -> Seq("The %s must be a positive integer"), "s" -> Seq("The %s must not be empty", "The %s must be at least 3 characters long")))
+      myValidator(demoDataWithErrors) must equalTo(Map("i" -> Seq("The field %s must be a positive integer"), "s" -> Seq("The field %s must not be empty", "The field %s must be at least 3 characters long")))
     }
 
     "be able to validate two values together" in {
@@ -61,10 +61,10 @@ object ValidationSpec extends Specification {
       val userFormInvalid = UserForm("jack", "jacktheripper", "jackthedipper")
       val myValidator = form[UserForm](
         Validation("username", _.username, MinLengthString(3)),
-        Validation("password", (f) => (f.password, f.passwordConfirm), EqualPasswords)
+        Validation("password", (f) => (f.password, f.passwordConfirm), EqualStrings)
       )
       myValidator(userFormValid) must equalTo(Map.empty)
-      myValidator(userFormInvalid) must equalTo(Map("password" -> Seq("The passwords did not match")))
+      myValidator(userFormInvalid) must equalTo(Map("password" -> Seq("The strings were not equal")))
     }
 
   }
