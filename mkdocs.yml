@@ -1,4 +1,6 @@
 site_name: svalidate
+repo_url: https://github.com/timo-schmid/svalidate
+repo_name: GitHub
 pages:
 - Introduction: '01-INTRO.md'
 - Basic Usage: '02-BASIC-USAGE.md'
