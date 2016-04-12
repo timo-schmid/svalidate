@@ -7,7 +7,7 @@ scala> import svalidate._
 import svalidate._
 ```
 
-The library is built around case classes - so lets define one for our user data:
+The library is built for (but not limited to) case classes - so lets define one for our user data:
 
 ```scala
 scala> case class UserData(id: Int, email: String, firstName: String, lastName: String)

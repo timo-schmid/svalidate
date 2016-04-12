@@ -6,7 +6,7 @@ If you haven't already done so in the last chapter, import the svalidate classes
 import svalidate._
 ```
 
-The library is built around case classes - so lets define one for our user data:
+The library is built for (but not limited to) case classes - so lets define one for our user data:
 
 ```tut
 case class UserData(id: Int, email: String, firstName: String, lastName: String)
