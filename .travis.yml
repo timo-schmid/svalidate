@@ -1,20 +1,34 @@
 sudo: false
+
 cache:
   directories:
   - "$HOME/.m2/repository"
   - "$HOME/.sbt"
   - "$HOME/.ivy2"
+
 language: scala
+
 script:
 - sbt -no-colors ++$TRAVIS_SCALA_VERSION clean test tut
+
 scala:
 - 2.10.6
 - 2.11.7
+
 jdk:
 - oraclejdk7
 - oraclejdk8
 - openjdk7
+
 env:
   global:
   - secure: MQaTFi7uUxxMKGVkcNuFEwl666A513pbESZo/lfcXxOFslaVjIPLoQKk1N/7yTvSD7D8t7JbQvrnfOwW4QQBgG3NQ+sopBwRaYb8Fa65SnJzRIoDdTWmTjTFwzH8uH92nf68++cQ8h0Ui7zZDjjm8ir8VV0ZL2fV1pGmpDbB+/c7qAH9wL+KCVq1XmXjCOTC7tM0Z2F7J53S6WmP5dp/G6lyN7syNwg79Qv2CeC1Qq14Cn5o3WVGxNqKFt8jvCZa+feyxA4OoM6S1S4NH2dizg877JdR+9MdWE4brUxBqIl7e4EopiB68g2vgBfiyQBhmk95Mga2Y0S+Zcs4kU9+wWW7Z2XYHE5nB2JSuZ5C9os1JZg7oaDIFeyL6HZSIvqL0FgnphJ9AL20M7H+8dHX9m1F/RsjUJypFVcto8S8TBpRmOyIttpKji83HEf5ZjRS1S13G3slFVQbWGldG5db2mMLD2LH2lFSjTO9vQqXEyFVWisHACd192salQkSbUARvxdVu8IyEYi2gxsMt7rvVQ68PB67foMQjZWmf5urAYddzGt+v9bUIt+muwGJKoUH8xBNQLKr1u80ataALQ4+f06pVKg828ibeAC7ld34gEbnZ/V62Ezhp4Dwcue/NR2tzBUzsvq/C7y/TZcunc4IJgJcJf2JlhMUVVrL5Oe5/qA=
   - secure: OVj9LG6rpEimOw2vJ5wi7eU3iXNg28MLIntd3/NsLJG7i49+Jlx6dEZ5RjTGIAm4ow9ztqnVoZxpdUa50IkTb2UqdlPq4BX0V+lg5BFMkdOF+fE7S/jCIbDFdjHaOuE2NhhTm3LGb15S2/cP5ylanIYvAPKAyGHg8md2igpBfuEBuqRMIDd9yWEnQfTRZmlmBR8RJpgykG/FqbW8nhLW9Iz9c/wnmq9o+4hagE73M7mq6ManB+KOP5mJ/K9oZMuqKwnkxdcagxER3QYXQnw4FLgt0/BRUvRZ/rbViLVSfiaB9XWnnrjOATLNF3Z5GzMPHAhYxAB602vxFYoc6JRqvkdTWnfscuDacNmraE+0PkrYkrbDeEVRelmsW0cNLjZnEzw006ThA+IG8BViR5D07YuMaTezWO7UCo8KbT07eNJtk82l/ZIBs+RhXnCrQQXGqAgPRTHdgntdNaPhD/HfUn5IC626mOJbWuje46LWxcIdyQwpN41vbCba4rbDvhmQuX4xYarLBxe2ccVI29LKBHF+11mDUJfwuYXRa15zJtnAW+Wf+FSnc7ANHS7mKyaMgPX0gzx/ig4rbdbU9RVxJu1Zva4gpnnd+d9mgZuTyrJkjjux/5aFrnqQl9zUVLEwc52wS6bna2Lk5nKuTFPCoDk7IYJ7xxqiE6FuIYjUqs4=
+
+after_success:
+- test "${TRAVIS_PULL_REQUEST}" = 'false' &&
+  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+  ( test "${TRAVIS_SCALA_VERSION}" = "2.10.6" || test "${TRAVIS_SCALA_VERSION}" = "2.11.7" ) &&
+  sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" && 
+  sbt -no-colors ++$TRAVIS_SCALA_VERSION 'set version := System.getenv("TRAVIS_TAG")' "packageBin" "packageSrc" "packageDoc" "publish"
+
