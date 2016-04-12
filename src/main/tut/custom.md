@@ -7,10 +7,11 @@ import svalidate._
 ```
 
 When it comes to validation, everyone has their own requirements:
-- Your webshop accepts only m/f for gender, while a medical software might accept several other options
-- A zip in Switzerland is 4 digits long, while it's 5 digits in most other countries
-- Phone number layouts differ from country to country
-- Usually you want to customize the error messages generated from your validation layer
+
+* Your webshop accepts only m/f for gender, while a medical software might accept several other options
+* A zip in Switzerland is 4 digits long, while it's 5 digits in most other countries
+* Phone number layouts differ from country to country
+* Usually you want to customize the error messages generated from your validation layer
 
 Thus, **svalidate** does not impose any restrictions on *what* or *how* you validate.
 

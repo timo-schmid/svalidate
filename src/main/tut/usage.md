@@ -37,6 +37,7 @@ val nameValidation = form[UserData](
 In the above example we create a so-called `form` we can use it many times to
 validate a `UserData`. We passed 2 `Validation` objects to the form:
 A validation is not more than a case class. It takes 3 arguments:
+
 * **label** The label: Validation's errors will be collected under this label.
   This doesn't have to be the same as the field name.
 * **get** The getter to get the value from the case class. In the first example,
