@@ -1,8 +1,4 @@
-# svalidate - easy case class validation
-
-[Introduction](01-INTRO.md) | [Basic Usage](02-BASIC-USAGE.md) | [Custom Validators](03-CUSTOM-VALIDATORS.md) | [Multi-Value Validators](04-MULTI-VALUE-VALIDATORS.md)
-
-## Basic usage
+# Basic usage
 
 If you haven't already done so in the last chapter, import the svalidate classes:
 
@@ -24,7 +20,7 @@ many situations.
 **Svalidate** comes with a few built-in validations that are fairly common.
 A common example is the NonEmptyValidator:
 
-### Creating a form
+## Creating a form
 
 ```scala
 scala> import svalidate.validators.NonEmptyString
@@ -57,7 +53,7 @@ So, for example if we want to validate the `firstName` we return a String, which
 can be validated using the `NonEmptyString` validator (because it extends
 `Validator[String]`).
 
-### Using a form to validate an object
+## Using a form to validate an object
 
 Now that we created the validation, we can try it on an object instance.
 
@@ -109,8 +105,4 @@ The field firstName must not be empty
 lastName:
 The field lastName must not be empty
 ``` 
-
-### Next
-
-[Custom Validators](03-CUSTOM-VALIDATORS.md)
 

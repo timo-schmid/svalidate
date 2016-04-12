@@ -1,8 +1,6 @@
-# svalidate - easy case class validation
+# Validators for complex data types
 
-[Introduction](01-INTRO.md) | [Basic Usage](02-BASIC-USAGE.md) | [Custom Validators](03-CUSTOM-VALIDATORS.md) | [Multi-Value Validators](04-MULTI-VALUE-VALIDATORS.md)
-
-### Validating multiple fields of a class at once
+## Validating multiple fields of a class at once
 
 If you haven't already done so in the last chapter, import the svalidate classes:
 
@@ -31,7 +29,7 @@ object EqualStrings extends Validator[(String,String)] {
 This validator takes a `(String, String)` as his type parameter, so the validate method can actually handle
 two values.
 
-### Using a multi-value validator
+## Using a multi-value validator
 
 ```tut
 

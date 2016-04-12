@@ -1,8 +1,4 @@
-# svalidate - easy case class validation
-
-[Introduction](01-INTRO.md) | [Basic Usage](02-BASIC-USAGE.md) | [Custom Validators](03-CUSTOM-VALIDATORS.md) | [Multi-Value Validators](04-MULTI-VALUE-VALIDATORS.md)
-
-## Power to the people with custom validators
+# Power to the people with custom validators
 
 If you haven't already done so in the last chapter, import the svalidate classes:
 
@@ -19,7 +15,7 @@ When it comes to validation, everyone has their own requirements:
 
 Thus, **svalidate** does not impose any restrictions on *what* or *how* you validate.
 
-### The Validator trait
+## The Validator trait
 
 Let's have a closer look at the `Validator` trait:
 
@@ -58,9 +54,4 @@ defined module NonEmptyString
 In the above example, we can see that the property type of the `NonEmptyString` validator is `String`. 
 It's validate method thus takes a single string as it's argument. In the implementation, we just return
 a single error if the string is empty or no error if the string is not empty.
-
-
-### Next
-
-[Multi-Value Validators](04-MULTI-VALUE-VALIDATORS.md)
 

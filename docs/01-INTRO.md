@@ -1,12 +1,8 @@
-# svalidate - easy case class validation
-
-[Introduction](01-INTRO.md) | [Basic Usage](02-BASIC-USAGE.md) | [Custom Validators](03-CUSTOM-VALIDATORS.md) | [Multi-Value Validators](04-MULTI-VALUE-VALIDATORS.md)
-
-## Welcome
+# Welcome
 
 Welcome and thanks for checking out **svalidate**.
 
-### Why svalidate
+## Why svalidate
 
 In scala we already have many possibilities of data validtaion: There's
 [Play Forms](https://www.playframework.com/documentation/2.5.x/ScalaForms)
@@ -21,7 +17,7 @@ these libraries. They are both very powerful, but with the power comes complexit
 I wanted something simple so I created a lightweight alternative: **svalidate**. If you
 want composition and such features, you should checkout Scalaz or Cats.
 
-### Scala dependency
+## Scala dependency
 
 To add svalidate to your build, add it to your project's libraryDependencies:
 
@@ -31,7 +27,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-### Running the examples in a REPL
+## Running the examples in a REPL
 
 You can start a console in your project like so:
 
@@ -47,7 +43,7 @@ scala> import svalidate._
 import svalidate._
 ```
 
-### About the docs
+## About the docs
 
 This documentation is written in [tut](https://github.com/tpolecat/tut) - a
 documentation system that allows to type-check the examples. This ensures that the
@@ -55,7 +51,7 @@ examples shown in this documentation do actually compile and run in the REPL.
 If an example doesn't work correctly and the library version is correct, please
 raise a bug.
 
-### Next
+## Next
 
 [Basic Usage](02-BASIC-USAGE.md)
 
