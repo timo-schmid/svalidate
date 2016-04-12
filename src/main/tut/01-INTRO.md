@@ -27,6 +27,8 @@ libraryDependencies ++= Seq(
 )
 ```
 
+> Not published yet - the group name might change.
+
 ## Running the examples in a REPL
 
 You can start a console in your project like so:
@@ -49,8 +51,4 @@ documentation system that allows to type-check the examples. This ensures that t
 examples shown in this documentation do actually compile and run in the REPL.
 If an example doesn't work correctly and the library version is correct, please
 raise a bug.
-
-## Next
-
-[Basic Usage](02-BASIC-USAGE.md)
 
