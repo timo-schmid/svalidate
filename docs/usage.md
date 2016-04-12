@@ -80,8 +80,8 @@ Lets see what we got:
 
 ```scala
 Map(
-  "firstName" -> List("The field {} must not be empty"),
-  "lastName"  -> List("The field {} must not be empty")
+  "firstName" -> List("The field %s must not be empty"),
+  "lastName"  -> List("The field %s must not be empty")
 )
 ```
 
