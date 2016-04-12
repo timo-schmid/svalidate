@@ -1,4 +1,4 @@
-# Power to the people with custom validators
+# Your own Validators
 
 If you haven't already done so in the last chapter, import the svalidate classes:
 

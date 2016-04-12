@@ -1,13 +1,13 @@
 # Validators for complex data types
 
-## Validating multiple fields of a class at once
-
 If you haven't already done so in the last chapter, import the svalidate classes:
 
 ```scala
 scala> import svalidate._
 import svalidate._
 ```
+
+## Validating multiple fields of a class at once
 
 Sometimes it's useful to validate two fields in a class together. Such an example would be to validate
 whether the user typed his password correct when siging up. This is possible, since we can use a validator

@@ -1,4 +1,4 @@
-# Basic usage
+# Preparation
 
 If you haven't already done so in the last chapter, import the svalidate classes:
 
