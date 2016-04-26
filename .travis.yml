@@ -16,9 +16,9 @@ scala:
 - 2.11.7
 
 jdk:
-- oraclejdk7
+# - oraclejdk7
 - oraclejdk8
-- openjdk7
+- openjdk8
 
 env:
   global:
