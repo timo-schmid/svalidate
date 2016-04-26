@@ -17,8 +17,8 @@ scala:
 
 jdk:
 # - oraclejdk7
+#- openjdk8
 - oraclejdk8
-- openjdk8
 
 env:
   global:
@@ -27,7 +27,7 @@ env:
 
 after_success:
 - test "${TRAVIS_PULL_REQUEST}" = 'false' &&
-  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
+  test "${TRAVIS_JDK_VERSION}" = 'oraclejdk8' &&
   ( test "${TRAVIS_SCALA_VERSION}" = "2.10.6" || test "${TRAVIS_SCALA_VERSION}" = "2.11.7" ) &&
   sh "$TRAVIS_BUILD_DIR/.travis.credentials.sh" && 
   test ! -z "$TRAVIS_TAG" &&
