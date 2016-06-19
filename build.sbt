@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
       "org.specs2"        %%  "specs2-mock"       % "3.7"    % "test",
       "com.novocode"      %   "junit-interface"   % "0.11"  % "test->default"
     ),
-    publishMavenStyle := false,
+    publishMavenStyle := true,
     bintrayRepository := "maven",
     bintrayOrganization := None,
     licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0")),
