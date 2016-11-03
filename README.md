@@ -33,7 +33,7 @@ val res2 = nameValidation(invalidUserData)
 
 ```
 libraryDependencies ++= Seq(
-  "svalidate" %% "svalidate" % "0.1"
+  "svalidate" %% "svalidate" % "0.3"
 )
 resolvers += Resolver.bintrayRepo("timo-schmid", "maven")
 ```
