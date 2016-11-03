@@ -6,8 +6,8 @@ lazy val root = (project in file("."))
     organization := "svalidate",
 //     javacOptions ++= Seq("-source", "1.8"),
     libraryDependencies ++= Seq(
-      "org.specs2"        %%  "specs2-core"       % "3.7"    % "test",
-      "org.specs2"        %%  "specs2-mock"       % "3.7"    % "test",
+      "org.specs2"        %%  "specs2-core"       % "3.8.6" % "test",
+      "org.specs2"        %%  "specs2-mock"       % "3.8.6" % "test",
       "com.novocode"      %   "junit-interface"   % "0.11"  % "test->default"
     ),
     publishMavenStyle := true,
